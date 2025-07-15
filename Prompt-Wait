@@ -1,0 +1,11 @@
+for _, v in ipairs(game:GetDescendants()) do
+    if v:IsA("ProximityPrompt") then
+        v.HoldDuration = 0
+    end
+end
+
+game.DescendantAdded:Connect(function(descendant)
+    if descendant:IsA("ProximityPrompt") then
+        descendant.HoldDuration = 0
+    end
+end)
